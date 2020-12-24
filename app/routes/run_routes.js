@@ -102,7 +102,7 @@ router.delete('/runs/:id', requireToken, (req, res, next) => {
     .then(handle404)
     .then(run => {
       // throw an error if current user doesn't own `run`
-      requireOwnership(req, run)
+      // requireOwnership(req, run)
       // delete the run ONLY IF the above didn't throw
       run.deleteOne()
     })
